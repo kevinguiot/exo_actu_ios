@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3610C61E800AAA008C6906 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3610C51E800AAA008C6906 /* XMLReader.m */; };
 		DB6D72521E7FBAB9000773D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D72511E7FBAB9000773D6 /* main.m */; };
 		DB6D72551E7FBAB9000773D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D72541E7FBAB9000773D6 /* AppDelegate.m */; };
 		DB6D72581E7FBAB9000773D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D72571E7FBAB9000773D6 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB3610C41E800AAA008C6906 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		DB3610C51E800AAA008C6906 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		DB6D724D1E7FBAB9000773D6 /* exo_actu_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exo_actu_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6D72511E7FBAB9000773D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB6D72531E7FBAB9000773D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 		DB6D724F1E7FBAB9000773D6 /* exo_actu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				DB3610C41E800AAA008C6906 /* XMLReader.h */,
+				DB3610C51E800AAA008C6906 /* XMLReader.m */,
 				DB6D72531E7FBAB9000773D6 /* AppDelegate.h */,
 				DB6D72541E7FBAB9000773D6 /* AppDelegate.m */,
 				DB6D72561E7FBAB9000773D6 /* ViewController.h */,
@@ -275,6 +280,7 @@
 			files = (
 				DB6D72581E7FBAB9000773D6 /* ViewController.m in Sources */,
 				DB6D72551E7FBAB9000773D6 /* AppDelegate.m in Sources */,
+				DB3610C61E800AAA008C6906 /* XMLReader.m in Sources */,
 				DB6D72521E7FBAB9000773D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +513,7 @@
 				DB6D727C1E7FBAB9000773D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB6D727D1E7FBAB9000773D6 /* Build configuration list for PBXNativeTarget "exo_actu_iosTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				DB6D727F1E7FBAB9000773D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB6D72801E7FBAB9000773D6 /* Build configuration list for PBXNativeTarget "exo_actu_iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +531,7 @@
 				DB6D72821E7FBAB9000773D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
