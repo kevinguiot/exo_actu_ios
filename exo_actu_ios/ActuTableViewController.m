@@ -7,21 +7,31 @@
 //
 
 #import "ActuTableViewController.h"
+#import "XMLReader.h"
+
 
 @interface ActuTableViewController ()
 
 @end
 
-@implementation ActuTableViewController
+@implementation ActuTableViewController : UITableViewController
+
+NSDictionary* items;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Récupération du contenu XML des actus le monde
+    NSURL *urlActu = [NSURL URLWithString:@"http://www.lemonde.fr/rss/une.xml"];
+    NSError* error;
+    NSString *actuXML = [NSString stringWithContentsOfURL:urlActu encoding:NSASCIIStringEncoding error:&error];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Parse du contenu dans un dictionnaire
+    NSError *parseError = nil;
+    NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:actuXML error:&parseError];
+    
+    // Récupération des items
+    items = xmlDictionary[@"rss"][@"channel"][@"item"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,23 +43,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+   // return 0;
+    return items.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+
     return cell;
+    
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
