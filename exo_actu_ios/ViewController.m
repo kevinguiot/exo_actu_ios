@@ -6,17 +6,17 @@
 //  Copyright © 2017 GUIOT Kevin. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "ViewController.h"
 #import "XMLReader.h"
 
-
-@interface Item : NSObject
-
-@property NSString *titre;
-@property NSString *description;
-
-@end
-
+struct Item
+{
+    __unsafe_unretained NSString *link;
+    __unsafe_unretained NSString *title;
+    __unsafe_unretained NSString *description;
+    __unsafe_unretained NSString *pubDate;
+};
 
 @interface ViewController ()
 
@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Récupération du contenu XML des actus le monde
     NSURL *urlActu = [NSURL URLWithString:@"http://www.lemonde.fr/rss/une.xml"];
     NSError* error;
@@ -38,6 +38,13 @@
     
     // Récupération des items
     NSDictionary *items = xmlDictionary[@"rss"][@"channel"][@"item"];
+
+    // On parcourt les items
+    for (NSDictionary* item in items) {
+        
+        // On récupère la description de l'item
+        NSDictionary *description = item[@"description"][@"text"];
+    }
 }
 
 
