@@ -80,6 +80,18 @@ NSArray *itemsArray;
     return cell;
 }
 
+// Sélection d'une cellule
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // On créé une nouvelle vue
+    UIViewController* itemSelected;
+    
+    /*
+    itemSelected.view.backgroundColor = [UIColor blueColor];
+    itemSelected.tabBarItem.title = @"actu";
+    */
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
