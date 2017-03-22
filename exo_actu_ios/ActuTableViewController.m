@@ -59,7 +59,7 @@ NSArray *itemsArray;
     NSDictionary *item =  itemsArray[indexPath.row];
     
     // On mets à jour la description
-    cell.textLabel.text = item[@"description"][@"text"];
+ //   cell.textLabel.text = item[@"description"][@"text"];
     
     return cell;
 }
