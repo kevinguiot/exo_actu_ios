@@ -56,6 +56,7 @@ NSArray *itemsArray;
     
     // On mets à jour le titre de la cellule
     cell.title.text = item[@"title"][@"text"];
+    //cell.description.text = [item[@"title"][@"text"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     // On mets à jour la description de la cellule
     cell.description.text = item[@"description"][@"text"];

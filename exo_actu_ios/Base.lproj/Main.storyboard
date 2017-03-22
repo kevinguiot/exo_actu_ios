@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,35 +26,65 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-c7-eSu" userLabel="image">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-c7-eSu" userLabel="image">
                                             <rect key="frame" x="8" y="4" width="130" height="96"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="96" id="6oz-jv-duy"/>
+                                                <constraint firstAttribute="width" constant="130" id="DA9-2J-c1A"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lire la suite..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1x-QU-Evt" userLabel="more">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lire la suite..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1x-QU-Evt" userLabel="more">
                                             <rect key="frame" x="146" y="81" width="221" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
                                             </accessibility>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="221" id="gi1-HV-iti"/>
+                                                <constraint firstAttribute="height" constant="21" id="llF-nG-O60"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-Og-n1p" userLabel="title">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-Og-n1p" userLabel="title">
                                             <rect key="frame" x="146" y="4" width="221" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="IoG-1s-OJl"/>
+                                                <constraint firstAttribute="width" constant="221" id="KM7-JS-2j9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-8r-Nu9" userLabel="description">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-8r-Nu9" userLabel="description">
                                             <rect key="frame" x="146" y="26" width="221" height="55"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="221" id="1gd-pO-YgF"/>
+                                                <constraint firstAttribute="height" constant="55" id="JNv-nz-lEn"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="eZA-Og-n1p" secondAttribute="trailing" constant="8" id="285-CY-IFA"/>
+                                        <constraint firstItem="P1x-QU-Evt" firstAttribute="bottom" secondItem="7c7-c3-w0e" secondAttribute="bottomMargin" id="4el-Nu-Ej1"/>
+                                        <constraint firstItem="eZA-Og-n1p" firstAttribute="leading" secondItem="LOb-c7-eSu" secondAttribute="trailing" constant="8" id="A44-mx-PIV"/>
+                                        <constraint firstItem="LOb-c7-eSu" firstAttribute="top" secondItem="7c7-c3-w0e" secondAttribute="top" constant="4" id="JjW-AM-poQ"/>
+                                        <constraint firstItem="Bha-8r-Nu9" firstAttribute="top" secondItem="eZA-Og-n1p" secondAttribute="bottom" constant="1" id="K6S-9M-t9Y"/>
+                                        <constraint firstItem="Bha-8r-Nu9" firstAttribute="trailing" secondItem="7c7-c3-w0e" secondAttribute="trailingMargin" id="Kp3-mv-4aJ"/>
+                                        <constraint firstItem="eZA-Og-n1p" firstAttribute="top" secondItem="7c7-c3-w0e" secondAttribute="top" constant="4" id="Lxr-gv-ClN"/>
+                                        <constraint firstItem="Bha-8r-Nu9" firstAttribute="leading" secondItem="LOb-c7-eSu" secondAttribute="trailing" constant="8" id="Onu-DS-NTy"/>
+                                        <constraint firstItem="P1x-QU-Evt" firstAttribute="top" secondItem="Bha-8r-Nu9" secondAttribute="bottom" id="UE9-zq-ydd"/>
+                                        <constraint firstItem="Bha-8r-Nu9" firstAttribute="top" secondItem="eZA-Og-n1p" secondAttribute="bottom" constant="1" id="hqe-cK-GEr"/>
+                                        <constraint firstItem="LOb-c7-eSu" firstAttribute="leading" secondItem="7c7-c3-w0e" secondAttribute="leading" constant="8" id="jEF-1R-U4s"/>
+                                        <constraint firstAttribute="bottom" secondItem="LOb-c7-eSu" secondAttribute="bottom" constant="10" id="osz-Wb-OkX"/>
+                                        <constraint firstItem="P1x-QU-Evt" firstAttribute="leading" secondItem="LOb-c7-eSu" secondAttribute="trailing" constant="8" id="qNl-hG-WQ4"/>
+                                        <constraint firstItem="P1x-QU-Evt" firstAttribute="top" secondItem="Bha-8r-Nu9" secondAttribute="bottom" id="r5b-FM-TBC"/>
+                                        <constraint firstItem="P1x-QU-Evt" firstAttribute="trailing" secondItem="7c7-c3-w0e" secondAttribute="trailingMargin" id="sfR-P7-MoD"/>
+                                        <constraint firstItem="eZA-Og-n1p" firstAttribute="leading" secondItem="LOb-c7-eSu" secondAttribute="trailing" constant="8" id="wl3-xq-7dv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="description" destination="Bha-8r-Nu9" id="x7O-ka-XGi"/>
