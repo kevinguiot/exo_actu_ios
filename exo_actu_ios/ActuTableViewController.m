@@ -54,10 +54,11 @@ NSArray *itemsArray;
     // On récupère l'item sélectionné
     NSDictionary *item =  itemsArray[indexPath.row];
     
-    // On mets à jour le texte de la cellule
-    //cell.text.text = item[@"description"][@"text"];
+    // On mets à jour le titre de la cellule
+    cell.title.text = item[@"title"][@"text"];
     
-    cell.title.text = item[@"description"][@"text"];
+    // On mets à jour la description de la cellule
+    cell.description.text = item[@"description"][@"text"];
     
     // On récupère l'URL de l'image
     NSString* urlImage = item[@"enclosure"][@"url"];

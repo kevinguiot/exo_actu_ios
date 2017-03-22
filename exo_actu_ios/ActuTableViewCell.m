@@ -10,8 +10,10 @@
 
 @implementation ActuTableViewCell
 
-@synthesize title = _title;
 @synthesize image = _image;
+@synthesize description = _description;
+@synthesize more = _more;
+@synthesize title = _title;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
