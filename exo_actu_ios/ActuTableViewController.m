@@ -55,15 +55,14 @@ NSArray *itemsArray;
     NSDictionary *item =  itemsArray[indexPath.row];
     
     // On mets à jour le texte de la cellule
+    //cell.text.text = item[@"description"][@"text"];
+    
     cell.title.text = item[@"description"][@"text"];
     
     // On récupère l'URL de l'image
     NSString* urlImage = item[@"enclosure"][@"url"];
     
-    // On récupère l'image
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
-    
-    // On mets à jour l'image de la cellule de manière asynchrone    
+    // On mets à jour l'image de la cellule de manière asynchrone
     dispatch_async(dispatch_get_global_queue(0,0), ^{
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
         if ( data == nil )
