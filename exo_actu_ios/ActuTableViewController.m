@@ -9,14 +9,13 @@
 #import "ActuTableViewController.h"
 #import "XMLReader.h"
 
-
 @interface ActuTableViewController ()
 
 @end
 
 @implementation ActuTableViewController : UITableViewController
 
-NSDictionary* items;
+NSArray *itemsArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,8 +29,8 @@ NSDictionary* items;
     NSError *parseError = nil;
     NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLString:actuXML error:&parseError];
     
-    // Récupération des items
-    items = xmlDictionary[@"rss"][@"channel"][@"item"];
+    // On récupère les items dans un tableau
+    itemsArray = xmlDictionary[@"rss"][@"channel"][@"item"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,22 +41,27 @@ NSDictionary* items;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-   // return 0;
-    return items.count;
+
+    // On renvoit le nombre d'articles
+    return itemsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // On récupère la cellule
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
-
-    return cell;
     
+    // On récupère l'item
+    NSDictionary *item =  itemsArray[indexPath.row];
+    
+    // On mets à jour la description
+    cell.textLabel.text = item[@"description"][@"text"];
+    
+    return cell;
 }
 
 
