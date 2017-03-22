@@ -63,8 +63,16 @@ NSArray *itemsArray;
     // On récupère l'image
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
     
-    // On mets à jour l'image de la cellule
-    cell.image.image = [UIImage imageWithData: imageData];
+    // On mets à jour l'image de la cellule de manière asynchrone    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
+        if ( data == nil )
+            return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // WARNING: is the cell still using the same data by this point??
+            cell.image.image = [UIImage imageWithData: data];
+        });
+    });
     
     return cell;
 }
