@@ -6,12 +6,9 @@
 //  Copyright © 2017 GUIOT Kevin. All rights reserved.
 //
 
-#import "ActuTableViewController.h"
 #import "XMLReader.h"
-
-@interface ActuTableViewController ()
-
-@end
+#import "ActuTableViewController.h"
+#import "ActuTableViewCell.h"
 
 @implementation ActuTableViewController : UITableViewController
 
@@ -38,8 +35,6 @@ NSArray *itemsArray;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -50,20 +45,20 @@ NSArray *itemsArray;
     return itemsArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
-    // On récupère la cellule
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+    // On récupère la cellule (avec les outlets)
+    ActuTableViewCell *cell = (ActuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"item"];
     
-    // On récupère l'item
+    // On récupère l'item sélectionné
     NSDictionary *item =  itemsArray[indexPath.row];
     
-    // On mets à jour la description
- //   cell.textLabel.text = item[@"description"][@"text"];
-    
+    // On mets à jour le texte de la cellule
+    cell.title.text = item[@"description"][@"text"];
+
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
