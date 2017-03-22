@@ -54,16 +54,18 @@ NSArray *itemsArray;
     // On récupère l'item sélectionné
     NSDictionary *item =  itemsArray[indexPath.row];
     
-    // On mets à jour le titre de la cellule
-    cell.title.text = item[@"title"][@"text"];
-    //cell.description.text = [item[@"title"][@"text"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    // On mets à jour la description de la cellule
-    cell.description.text = item[@"description"][@"text"];
-    
     // On récupère l'URL de l'image
     NSString* urlImage = item[@"enclosure"][@"url"];
     
+    // On récupère les informations en décodant l'UTF-8
+    NSString *title = [NSString stringWithCString:[item[@"title"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    
+    NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    
+    // On mets à jour les informations (title, description) de la cellule
+    cell.title.text = title;
+    cell.description.text = description;
+
     // On mets à jour l'image de la cellule de manière asynchrone
     dispatch_async(dispatch_get_global_queue(0,0), ^{
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
