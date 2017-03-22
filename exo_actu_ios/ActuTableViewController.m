@@ -56,7 +56,16 @@ NSArray *itemsArray;
     
     // On mets à jour le texte de la cellule
     cell.title.text = item[@"description"][@"text"];
-
+    
+    // On récupère l'URL de l'image
+    NSString* urlImage = item[@"enclosure"][@"url"];
+    
+    // On récupère l'image
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
+    
+    // On mets à jour l'image de la cellule
+    cell.image.image = [UIImage imageWithData: imageData];
+    
     return cell;
 }
 
