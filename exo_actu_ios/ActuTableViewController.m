@@ -82,14 +82,12 @@ NSArray *itemsArray;
 
 // Sélection d'une cellule
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    // On créé la vue basée sur la vue existante itemSelected
+    UIViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
     
-    // On créé une nouvelle vue
-    UIViewController* itemSelected;
-    
-    /*
-    itemSelected.view.backgroundColor = [UIColor blueColor];
-    itemSelected.tabBarItem.title = @"actu";
-    */
+    // On se redirige sur la vue
+    [self.navigationController pushViewController:itemSelected animated:true];
 }
 
 /*
