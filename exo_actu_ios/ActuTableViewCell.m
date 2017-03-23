@@ -12,7 +12,6 @@
 
 @synthesize image = _image;
 @synthesize description = _description;
-@synthesize more = _more;
 @synthesize title = _title;
 
 /*
@@ -27,4 +26,9 @@
     // Configure the view for the selected state
 }
 */
+
+- (IBAction)moreButton:(UIButton *)sender {
+    
+}
+
 @end
