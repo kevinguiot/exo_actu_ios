@@ -30,6 +30,12 @@ NSArray *itemsArray;
     itemsArray = xmlDictionary[@"rss"][@"channel"][@"item"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    // On mets à jour la navigation
+    self.navigationController.navigationBar.topItem.title = @"Actualité à la Une";
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
