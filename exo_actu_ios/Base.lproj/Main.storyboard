@@ -161,7 +161,6 @@
                         <outlet property="image" destination="AF5-8O-Oif" id="BlM-j2-gUH"/>
                         <outlet property="moreButton" destination="gZS-oF-tHd" id="VQZ-0z-AxR"/>
                         <outlet property="moreButtonNavigation" destination="UJD-sl-noc" id="U0c-1P-Kim"/>
-                        <outlet property="title" destination="p07-iI-CDW" id="PPB-Kt-hbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay0-I5-z4P" userLabel="First Responder" sceneMemberID="firstResponder"/>

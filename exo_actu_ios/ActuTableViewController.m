@@ -9,6 +9,7 @@
 #import "XMLReader.h"
 #import "ActuTableViewController.h"
 #import "ActuTableViewCell.h"
+#import "ItemSelectedViewController.h"
 
 @implementation ActuTableViewController : UITableViewController
 
@@ -57,6 +58,11 @@ NSArray *itemsArray;
     // On récupère la cellule (avec les outlets)
     ActuTableViewCell *cell = (ActuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"item"];
     
+    
+    
+    
+    
+    
     // On récupère l'item sélectionné
     NSDictionary *item =  itemsArray[indexPath.row];
     
@@ -67,6 +73,11 @@ NSArray *itemsArray;
     NSString *title = [NSString stringWithCString:[item[@"title"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    
+    
+    
+    
+    
     
     // On mets à jour les informations (title, description) de la cellule
     cell.title.text = title;
@@ -89,8 +100,34 @@ NSArray *itemsArray;
 // Sélection d'une cellule
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    // On récupère l'item sélectionné
+    NSDictionary *item =  itemsArray[indexPath.row];
+    
+    // On récupère l'URL de l'image
+    NSString* urlImage = item[@"enclosure"][@"url"];
+    
+    // On récupère les informations en décodant l'UTF-8
+    NSString *title = [NSString stringWithCString:[item[@"title"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    
+    NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    
     // On créé la vue basée sur la vue existante itemSelected
-    UIViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
+    ItemSelectedViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
+
+    // On mets à jour les informations
+    itemSelected.description.text = @"description";
+    itemSelected.date.text = @"date";
+    
+    // On mets à jour l'image de la cellule de manière asynchrone
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
+        if ( data == nil )
+            return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // WARNING: is the cell still using the same data by this point??
+            itemSelected.image.image = [UIImage imageWithData: data];
+        });
+    });
     
     // On se redirige sur la vue
     [self.navigationController pushViewController:itemSelected animated:true];
