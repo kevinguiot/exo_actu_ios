@@ -18,4 +18,6 @@
 - (IBAction)moreButton:(UIButton *)sender;
 - (IBAction)moreBarButton:(UIBarButtonItem *)sender;
 
+@property NSString* link;
+
 @end
