@@ -103,18 +103,24 @@ NSArray *itemsArray;
     
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
-    // On récupère la date (en format dd MM yyyy HH:mm:ss O)
-    NSString *dateString = [item[@"pubDate"][@"text"] substringFromIndex:5];
+    // On récupère la date
+    NSString *dateString = item[@"pubDate"][@"text"];
     
-    // On parse la date pour la retourné en dd/MM/yyyy à HH:mm:ss
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd MM yyyy HH:mm:ss O"];
-    NSDate *dateParse = [dateFormatter dateFromString:dateString];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy à HH:mm:ss"];
+    // On prépare le NSDateFormatter
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [formatter setLocale:posix];
+    [formatter setDateFormat:@"E, d MMM yyyy HH:mm:ss Z"];
+  
+    // On parse la date sous format NSDate
+    NSDate *dateParse = [formatter dateFromString:dateString];
     
-    // On récupère la date parsée
-    NSString *date = [dateFormatter stringFromDate:dateParse];
+    // On mets à jour le formatter
+    [formatter setDateFormat:@"dd/MM/yyyy à HH:mm:ss"];
     
+    // On récupère la nouvelle date en format string
+    NSString *date = [formatter stringFromDate:dateParse];
+
     // On améliore la date
     date = [NSString stringWithFormat:@"Publié le %@", date];
     
@@ -185,6 +191,4 @@ NSArray *itemsArray;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
-
-@end
+*/@end
