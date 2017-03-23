@@ -44,5 +44,17 @@
 }
 
 - (IBAction)moreBarButton:(UIBarButtonItem *)sender {
+    
+    // On prépare les options de partage
+    UIImage *image = _image.image;
+
+    NSArray *activityItems = @[image];
+    UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewControntroller.excludedActivityTypes = @[];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        activityViewControntroller.popoverPresentationController.sourceView = self.view;
+        activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+    }
+    [self presentViewController:activityViewControntroller animated:true completion:nil];
 }
 @end
