@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KJv-gL-HzP" id="7c7-c3-w0e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-c7-eSu" userLabel="image">
@@ -155,6 +155,14 @@
                     <navigationItem key="navigationItem" id="3Mc-vp-htU">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="UJD-sl-noc"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="date" destination="7AP-sT-QrP" id="bHQ-my-VMo"/>
+                        <outlet property="description" destination="I1y-Xb-hj6" id="3tw-YF-MGg"/>
+                        <outlet property="image" destination="AF5-8O-Oif" id="BlM-j2-gUH"/>
+                        <outlet property="moreButton" destination="gZS-oF-tHd" id="VQZ-0z-AxR"/>
+                        <outlet property="moreButtonNavigation" destination="UJD-sl-noc" id="U0c-1P-Kim"/>
+                        <outlet property="title" destination="p07-iI-CDW" id="PPB-Kt-hbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay0-I5-z4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +172,7 @@
         <scene sceneID="R5D-qq-5Ww">
             <objects>
                 <navigationController id="cFb-7I-0dY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="el9-OH-juS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="el9-OH-juS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

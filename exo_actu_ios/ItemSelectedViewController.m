@@ -8,11 +8,14 @@
 
 #import "ItemSelectedViewController.h"
 
-@interface ItemSelectedViewController ()
-
-@end
-
 @implementation ItemSelectedViewController
+
+@synthesize title = _title;
+@synthesize date = _date;
+@synthesize image = _image;
+@synthesize description = _description;
+@synthesize moreButton = _moreButton;
+@synthesize moreButtonNavigation = _moreButtonNavigation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
