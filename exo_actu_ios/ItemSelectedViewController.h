@@ -10,6 +10,7 @@
 
 @interface ItemSelectedViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *description;
