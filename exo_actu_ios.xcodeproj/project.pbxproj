@@ -17,6 +17,7 @@
 		DB6D726B1E7FBAB9000773D6 /* exo_actu_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D726A1E7FBAB9000773D6 /* exo_actu_iosTests.m */; };
 		DB6D72761E7FBAB9000773D6 /* exo_actu_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6D72751E7FBAB9000773D6 /* exo_actu_iosUITests.m */; };
 		DB9010FB1E813A56002534AD /* ActuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9010FA1E813A56002534AD /* ActuTableViewController.m */; };
+		DBA51EE61E83DAF600CFACF5 /* ItemSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA51EE51E83DAF600CFACF5 /* ItemSelectedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		DB6D72771E7FBAB9000773D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB9010F91E813A56002534AD /* ActuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActuTableViewController.h; sourceTree = "<group>"; };
 		DB9010FA1E813A56002534AD /* ActuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActuTableViewController.m; sourceTree = "<group>"; };
+		DBA51EE41E83DAF600CFACF5 /* ItemSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSelectedViewController.h; sourceTree = "<group>"; };
+		DBA51EE51E83DAF600CFACF5 /* ItemSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSelectedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 		DB6D724F1E7FBAB9000773D6 /* exo_actu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				DBA51EE41E83DAF600CFACF5 /* ItemSelectedViewController.h */,
+				DBA51EE51E83DAF600CFACF5 /* ItemSelectedViewController.m */,
 				DB129E161E82A86700D6F869 /* ActuTableViewCell.h */,
 				DB129E171E82A86700D6F869 /* ActuTableViewCell.m */,
 				DB9010F91E813A56002534AD /* ActuTableViewController.h */,
@@ -285,6 +290,7 @@
 			files = (
 				DB6D72551E7FBAB9000773D6 /* AppDelegate.m in Sources */,
 				DB3610C61E800AAA008C6906 /* XMLReader.m in Sources */,
+				DBA51EE61E83DAF600CFACF5 /* ItemSelectedViewController.m in Sources */,
 				DB129E181E82A86700D6F869 /* ActuTableViewCell.m in Sources */,
 				DB6D72521E7FBAB9000773D6 /* main.m in Sources */,
 				DB9010FB1E813A56002534AD /* ActuTableViewController.m in Sources */,

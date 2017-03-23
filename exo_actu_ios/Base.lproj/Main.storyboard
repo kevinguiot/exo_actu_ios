@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1272.8" y="128.18590704647679"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Selected View Controller-->
         <scene sceneID="bwq-to-A6G">
             <objects>
-                <viewController storyboardIdentifier="itemSelected" id="WAa-XH-lsm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itemSelected" id="WAa-XH-lsm" customClass="ItemSelectedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Xb-bc-4yY"/>
                         <viewControllerLayoutGuide type="bottom" id="6JT-D6-hy4"/>
