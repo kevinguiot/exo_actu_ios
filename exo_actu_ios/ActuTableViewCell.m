@@ -15,7 +15,6 @@
 @synthesize more = _more;
 @synthesize title = _title;
 
-
 /*
 - (void)awakeFromNib {
     [super awakeFromNib];

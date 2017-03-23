@@ -10,12 +10,14 @@
 
 @implementation ItemSelectedViewController
 
+@synthesize title = _title;
 @synthesize date = _date;
 @synthesize image = _image;
 @synthesize description = _description;
 @synthesize moreButton = _moreButton;
 @synthesize moreButtonNavigation = _moreButtonNavigation;
 
+/*
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,7 +27,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+*/
 /*
 #pragma mark - Navigation
 

@@ -58,11 +58,6 @@ NSArray *itemsArray;
     // On récupère la cellule (avec les outlets)
     ActuTableViewCell *cell = (ActuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"item"];
     
-    
-    
-    
-    
-    
     // On récupère l'item sélectionné
     NSDictionary *item =  itemsArray[indexPath.row];
     
@@ -74,23 +69,20 @@ NSArray *itemsArray;
     
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
-    
-    
-    
-    
-    
-    // On mets à jour les informations (title, description) de la cellule
-    cell.title.text = title;
-    cell.description.text = description;
-
-    // On mets à jour l'image de la cellule de manière asynchrone
+    // On ouvere un nouveau thread
     dispatch_async(dispatch_get_global_queue(0,0), ^{
+        
+        // On récupère le contenu de l'image
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
-        if ( data == nil )
-            return;
+        
+        if ( data == nil ) return;
+        
+        // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
+
             cell.image.image = [UIImage imageWithData: data];
+            cell.title.text = title;
+            cell.description.text = description;
         });
     });
     
@@ -113,19 +105,25 @@ NSArray *itemsArray;
     
     // On créé la vue basée sur la vue existante itemSelected
     ItemSelectedViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
-
-    // On mets à jour les informations
-    itemSelected.description.text = @"description";
-    itemSelected.date.text = @"date";
-    
-    // On mets à jour l'image de la cellule de manière asynchrone
+        
+    // On ouvere un nouveau thread
     dispatch_async(dispatch_get_global_queue(0,0), ^{
+        
+        // On récupère le contenu de l'image
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
-        if ( data == nil )
-            return;
+        
+        if ( data == nil ) return;
+        
+        // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
             itemSelected.image.image = [UIImage imageWithData: data];
+            itemSelected.title.text = title;
+            
+            // Permet de placer le texte en haut
+            //itemSelected.title.sizeToFit;
+            
+            itemSelected.description.text = description;
+            itemSelected.date.text = @"Publié le ...";
         });
     });
     
