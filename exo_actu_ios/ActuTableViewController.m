@@ -132,16 +132,13 @@ NSArray *itemsArray;
         // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            // Permet de placer le texte en haut
-            //itemSelected.title.sizeToFit;
-            
             itemSelected.title.text = title;
             itemSelected.date.text = date;
-            itemSelected.description.text = description;
+            itemSelected.description.text = [NSString stringWithFormat:@"\t%@", description];
             itemSelected.image.image = [UIImage imageWithData: data];
         });
     });
-    
+        
     // On se redirige sur la vue
     [self.navigationController pushViewController:itemSelected animated:true];
 }
