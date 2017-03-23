@@ -144,6 +144,9 @@ NSArray *itemsArray;
             itemSelected.image.image = [UIImage imageWithData: data];
         });
     });
+    
+    // On envoie le lien de l'article
+    itemSelected.link = item[@"guid"][@"text"];
         
     // On se redirige sur la vue
     [self.navigationController pushViewController:itemSelected animated:true];

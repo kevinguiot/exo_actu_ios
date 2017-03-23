@@ -14,6 +14,7 @@
 @synthesize date = _date;
 @synthesize image = _image;
 @synthesize description = _description;
+@synthesize link = _link;
 
 /*
 - (void)viewDidLoad {
@@ -37,6 +38,9 @@
 */
 
 - (IBAction)moreButton:(UIButton *)sender {
+    
+    // On ouvre le lien sur Safari
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_link]];
 }
 
 - (IBAction)moreBarButton:(UIBarButtonItem *)sender {
