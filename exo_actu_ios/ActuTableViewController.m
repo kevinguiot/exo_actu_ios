@@ -103,6 +103,10 @@ NSArray *itemsArray;
     
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
+    NSString *date = item[@"pubDate"][@"text"];
+ 
+    // On récupère la date et on la parse
+    
     // On créé la vue basée sur la vue existante itemSelected
     ItemSelectedViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
         
@@ -116,14 +120,14 @@ NSArray *itemsArray;
         
         // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
-            itemSelected.image.image = [UIImage imageWithData: data];
-            itemSelected.title.text = title;
             
             // Permet de placer le texte en haut
             //itemSelected.title.sizeToFit;
             
             itemSelected.description.text = description;
-            itemSelected.date.text = @"Publié le ...";
+            itemSelected.date.text = date;
+            itemSelected.image.image = [UIImage imageWithData: data];
+            itemSelected.title.text = title;
         });
     });
     
