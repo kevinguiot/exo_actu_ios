@@ -39,6 +39,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Lire la suite... "/>
+                                            <connections>
+                                                <action selector="more:" destination="KJv-gL-HzP" eventType="touchUpInside" id="fcn-93-Bih"/>
+                                                <action selector="moreButton:" destination="KJv-gL-HzP" eventType="touchUpInside" id="bSG-z1-M3D"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -99,6 +103,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-oF-tHd">
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Consulter l'article en entier..."/>
+                                <connections>
+                                    <action selector="moreButton:" destination="WAa-XH-lsm" eventType="touchUpInside" id="Uat-wR-7eC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article publié le 23 mars 2017 à 10h45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AP-sT-QrP">
                                 <constraints>
@@ -132,14 +139,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Mc-vp-htU">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="UJD-sl-noc"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="UJD-sl-noc">
+                            <connections>
+                                <action selector="moreBarButton:" destination="WAa-XH-lsm" id="R8q-H2-461"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="date" destination="7AP-sT-QrP" id="bHQ-my-VMo"/>
                         <outlet property="description" destination="I1y-Xb-hj6" id="3tw-YF-MGg"/>
                         <outlet property="image" destination="AF5-8O-Oif" id="BlM-j2-gUH"/>
-                        <outlet property="moreButton" destination="gZS-oF-tHd" id="VQZ-0z-AxR"/>
-                        <outlet property="moreButtonNavigation" destination="UJD-sl-noc" id="U0c-1P-Kim"/>
                         <outlet property="title" destination="p07-iI-CDW" id="fcf-iO-wfS"/>
                     </connections>
                 </viewController>

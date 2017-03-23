@@ -14,8 +14,6 @@
 @synthesize date = _date;
 @synthesize image = _image;
 @synthesize description = _description;
-@synthesize moreButton = _moreButton;
-@synthesize moreButtonNavigation = _moreButtonNavigation;
 
 /*
 - (void)viewDidLoad {
@@ -38,4 +36,9 @@
 }
 */
 
+- (IBAction)moreButton:(UIButton *)sender {
+}
+
+- (IBAction)moreBarButton:(UIBarButtonItem *)sender {
+}
 @end

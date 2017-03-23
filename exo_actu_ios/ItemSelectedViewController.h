@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *description;
-@property (weak, nonatomic) IBOutlet UIButton *moreButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButtonNavigation;
+
+- (IBAction)moreButton:(UIButton *)sender;
+- (IBAction)moreBarButton:(UIBarButtonItem *)sender;
 
 @end
