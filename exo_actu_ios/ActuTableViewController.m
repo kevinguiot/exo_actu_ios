@@ -103,9 +103,20 @@ NSArray *itemsArray;
     
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
-    NSString *date = item[@"pubDate"][@"text"];
- 
-    // On récupère la date et on la parse
+    // On récupère la date (en format dd MM yyyy HH:mm:ss O)
+    NSString *dateString = [item[@"pubDate"][@"text"] substringFromIndex:5];
+    
+    // On parse la date pour la retourné en dd/MM/yyyy à HH:mm:ss
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd MM yyyy HH:mm:ss O"];
+    NSDate *dateParse = [dateFormatter dateFromString:dateString];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy à HH:mm:ss"];
+    
+    // On récupère la date parsée
+    NSString *date = [dateFormatter stringFromDate:dateParse];
+    
+    // On améliore la date
+    date = [NSString stringWithFormat:@"Publié le %@", date];
     
     // On créé la vue basée sur la vue existante itemSelected
     ItemSelectedViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
@@ -124,10 +135,10 @@ NSArray *itemsArray;
             // Permet de placer le texte en haut
             //itemSelected.title.sizeToFit;
             
-            itemSelected.description.text = description;
-            itemSelected.date.text = date;
-            itemSelected.image.image = [UIImage imageWithData: data];
             itemSelected.title.text = title;
+            itemSelected.date.text = date;
+            itemSelected.description.text = description;
+            itemSelected.image.image = [UIImage imageWithData: data];
         });
     });
     
