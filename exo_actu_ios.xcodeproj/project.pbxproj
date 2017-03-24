@@ -222,6 +222,7 @@
 				TargetAttributes = {
 					DB6D724C1E7FBAB9000773D6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G5NKU86WUL;
 						ProvisioningStyle = Automatic;
 					};
 					DB6D72651E7FBAB9000773D6 = {
@@ -442,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G5NKU86WUL;
 				INFOPLIST_FILE = exo_actu_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -454,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G5NKU86WUL;
 				INFOPLIST_FILE = exo_actu_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

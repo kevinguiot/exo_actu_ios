@@ -70,12 +70,12 @@ NSArray *itemsArray;
     NSString *description = [NSString stringWithCString:[item[@"description"][@"text"] cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
     
     // On ouvere un nouveau thread
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
+    //dispatch_async(dispatch_get_global_queue(0,0), ^{
         
         // On récupère le contenu de l'image
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
         
-        if ( data == nil ) return;
+        //if ( data == nil ) return;
         
         // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -84,7 +84,7 @@ NSArray *itemsArray;
             cell.title.text = title;
             cell.description.text = description;
         });
-    });
+    //});
     
     return cell;
 }
@@ -128,12 +128,12 @@ NSArray *itemsArray;
     ItemSelectedViewController *itemSelected = [self.storyboard instantiateViewControllerWithIdentifier:@"itemSelected"];
         
     // On ouvere un nouveau thread
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
+    //dispatch_async(dispatch_get_global_queue(0,0), ^{
         
         // On récupère le contenu de l'image
         NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlImage]];
         
-        if ( data == nil ) return;
+        //if ( data == nil ) return;
         
         // On mets à jour les valeurs de la vue
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -143,7 +143,7 @@ NSArray *itemsArray;
             itemSelected.description.text = [NSString stringWithFormat:@"\t%@", description];
             itemSelected.image.image = [UIImage imageWithData: data];
         });
-    });
+    //});
     
     // On envoie le lien de l'article
     itemSelected.link = item[@"guid"][@"text"];

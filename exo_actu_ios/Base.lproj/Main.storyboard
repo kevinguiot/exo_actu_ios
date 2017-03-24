@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cFb-7I-0dY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cFb-7I-0dY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,31 +20,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" rowHeight="110" id="KJv-gL-HzP" customClass="ActuTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KJv-gL-HzP" id="7c7-c3-w0e">
-                                    <frame key="frameInset" width="375" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOb-c7-eSu" userLabel="image">
-                                            <frame key="frameInset" minX="23" minY="18" width="103" height="74"/>
+                                            <rect key="frame" x="23" y="18" width="103" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Présidentielle : au sein du gouvernement, qui soutient Hamon, qui soutient Macron ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-Og-n1p" userLabel="title">
-                                            <frame key="frameInset" minX="146" minY="8" width="221" height="69"/>
+                                            <rect key="frame" x="146" y="8" width="221" height="69"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ1-qg-ICY">
-                                            <frame key="frameInset" minX="146" minY="74" width="164" height="18"/>
+                                            <rect key="frame" x="146" y="74" width="164" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Lire la suite... "/>
                                             <connections>
-                                                <action selector="more:" destination="KJv-gL-HzP" eventType="touchUpInside" id="fcn-93-Bih"/>
-                                                <action selector="moreButton:" destination="KJv-gL-HzP" eventType="touchUpInside" id="bSG-z1-M3D"/>
+                                                <action selector="moreButton:" destination="KJv-gL-HzP" eventType="touchUpInside" id="I4n-Ah-ela"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -76,12 +78,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AF5-8O-Oif">
+                                <rect key="frame" x="16" y="255" width="343" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="bVe-Xg-EYo"/>
                                     <constraint firstAttribute="width" constant="343" id="wMm-ey-4vv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nicolas Hulot et 80 ONG lancent un « appel des solidarités » contre les inégalités" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p07-iI-CDW">
+                                <rect key="frame" x="16" y="84" width="343" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="JjZ-Dw-AzP"/>
                                     <constraint firstAttribute="width" constant="343" id="WIT-SL-Ri0"/>
@@ -91,6 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1y-Xb-hj6">
+                                <rect key="frame" x="16" y="452" width="343" height="129"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="129" id="Ash-WL-S1s"/>
                                     <constraint firstAttribute="width" constant="343" id="kjh-XG-mlj"/>
@@ -101,6 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-oF-tHd">
+                                <rect key="frame" x="58" y="606" width="259" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Consulter l'article en entier..."/>
                                 <connections>
@@ -108,6 +114,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article publié le 23 mars 2017 à 10h45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AP-sT-QrP">
+                                <rect key="frame" x="16" y="214" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Tha-Xn-812"/>
                                     <constraint firstAttribute="width" constant="343" id="rO4-QW-bI3"/>
