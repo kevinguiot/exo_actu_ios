@@ -34,7 +34,7 @@ NSArray *itemsArray;
 - (void)viewWillAppear:(BOOL)animated {
     
     // On mets à jour la navigation
-    self.navigationController.navigationBar.topItem.title = @"Actualité à la Une";
+    self.navigationController.navigationBar.topItem.title = @"Actualités";
 }
 
 - (void)didReceiveMemoryWarning {
