@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:exo_actu_ios.xcodeproj">
+      location = "self:/Users/gk601804/Desktop/exo_actu_ios/exo_actu_ios.xcodeproj">
    </FileRef>
 </Workspace>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Actualité à la Une - Le Monde-->
+        <!--Actualités-->
         <scene sceneID="gE9-qY-JtL">
             <objects>
                 <tableViewController id="cjE-NT-dMx" customClass="ActuTableViewController" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="cjE-NT-dMx" id="fsQ-PL-lVz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Actualité à la Une - Le Monde" id="o9E-ye-yFD"/>
+                    <navigationItem key="navigationItem" title="Actualités" id="o9E-ye-yFD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM6-xr-Rnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
