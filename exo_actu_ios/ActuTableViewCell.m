@@ -14,6 +14,10 @@
 @synthesize description = _description;
 @synthesize title = _title;
 
+- (IBAction)moreButton:(id)sender {
+    
+}
+
 /*
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -27,8 +31,5 @@
 }
 */
 
-- (IBAction)moreButton:(UIButton *)sender {
-    
-}
 
 @end
