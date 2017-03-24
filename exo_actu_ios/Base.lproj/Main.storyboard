@@ -14,7 +14,7 @@
         <scene sceneID="gE9-qY-JtL">
             <objects>
                 <tableViewController id="cjE-NT-dMx" customClass="ActuTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dtm-3O-336">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dtm-3O-336">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,7 +146,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Mc-vp-htU">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="UJD-sl-noc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="UJD-sl-noc">
                             <connections>
                                 <action selector="moreBarButton:" destination="WAa-XH-lsm" id="R8q-H2-461"/>
                             </connections>
@@ -166,14 +166,14 @@
         <!--Navigation Controller-->
         <scene sceneID="R5D-qq-5Ww">
             <objects>
-                <navigationController id="cFb-7I-0dY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" id="cFb-7I-0dY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="el9-OH-juS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="cjE-NT-dMx" kind="relationship" relationship="rootViewController" id="KqG-dM-g4e"/>
-                        <segue destination="WAa-XH-lsm" kind="push" id="5uY-uZ-Pp9"/>
+                        <segue destination="WAa-XH-lsm" kind="show" id="2sR-ns-N6D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at3-vV-rWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
